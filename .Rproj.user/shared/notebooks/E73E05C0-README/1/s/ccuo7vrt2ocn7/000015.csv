@@ -1,0 +1,6 @@
+"0","g <- line_graph_continents(owid_covid_data, x = ""Date"","
+"0","                                  y = ""Total Cases"", title = ""Covid per Continent"", subtitle = ""Total number of cases per contintent from beginning 2020"","
+"0","                                  caption = ""Note:OWID data used"")"
+"1","[38;5;252m`summarise()` has grouped output by 'continent', 'total_cases'. You can override using the `.groups`
+argument.[39m
+"

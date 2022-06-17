@@ -1,0 +1,15 @@
+pacman::p_load(forcats)
+
+df_cont <- dplyr::starwars %>% 
+    select(name, height, mass, hair_color, gender, eye_color) %>% 
+    
+    mutate(height = as.numeric(height))
+
+SW %>% 
+    mutate(eye_color = forcats::fct_infreq(eye_color)) %>% 
+    ggplot() + 
+    geom_bar(aes(x = eye_color), fill = "steelblue", alpha = 0.7) + 
+    
+    coord_flip() + 
+    labs(x = "Count", y = "Eye-Colour", title = "Eye-Colour spread in Star Wars movies", 
+         caption = "Data from dplyr package in R")

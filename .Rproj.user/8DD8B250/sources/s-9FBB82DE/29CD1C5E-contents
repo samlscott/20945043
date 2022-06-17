@@ -1,0 +1,21 @@
+
+
+ library(tidyverse)
+ df_cont <- owid_covid_data %>%
+     group_by(continent, total_cases, date) %>%
+     dplyr::summarize(continent_sum = sum(total_cases)) %>%
+     as.data.frame() %>%
+     na.omit(.)
+
+
+
+install.packages("ggplot2")
+ library(ggplot2)
+
+ plot_df_cont <- df_cont
+ g <- plot_df_cont %>%
+     ggplot() +
+     geom_line(aes(x = date, y = total_cases, color = continent), alpha = 0.8,
+               size = 1)
+
+ print(g)

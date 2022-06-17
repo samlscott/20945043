@@ -1,0 +1,114 @@
+
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+# Question 1 
+
+## Creating Template
+
+```{r}
+
+Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/20945043/Question1",
+                          template_name = "Question1_html",
+                          build_project = T, open_project = F)
+
+```
+
+## Code
+
+```{r}
+gc() 
+
+library(pacman)
+p_load(tidyverse, lubridate)
+
+list.files('Question1/Code', full.names = T, recursive = T) %>% as.list() %>% walk(~source(.))
+```
+
+## Loading Data
+
+```{r}
+ library(readr)
+ Deaths_by_cause <- read_csv("Question1/Data/Covid/Deaths_by_cause.csv")
+
+```
+
+```{r}
+library(readr)
+owid_covid_data <- read_csv("Question1/Data/Covid/owid-covid-data.csv")
+
+```
+
+
+## Graph 1
+
+```{r}
+g <- line_graph_continents(owid_covid_data, x = "Date",
+                                  y = "Total Cases", title = "Covid per Continent", subtitle = "Total number of cases per contintent from beginning 2020",
+                                  caption = "Note:OWID data used", total_cases)
+g
+
+```
+
+As seen in the graph, the continents with the highest number of total cases is Europe and North America. African countries are seen to have not been as greatly by COVID than North American, South American and European countries. In comparison, the number of total countries in Africa seem almost insignificant in comparison to countries in other continents. 
+
+However, to accurately interpret this graph, it is imperative that one take in to consideration the population of the continents. 
+
+## Graph 2
+
+```{r}
+g <- brics_SI_deaths(owid_covid_data, df_brics, df_brics_sub, total_deaths, x = "SI",
+                                                          y = "Total Deaths", title = "BRICS", subtitle = "Total number of deaths and SI per country", caption = "Note:OWID data used")
+
+```
+# Question 2
+
+## Creating Template
+
+```{r}
+
+Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/20945043/Question2",
+                          template_name = "Question2_html",
+                          build_project = T, open_project = F)
+
+```
+
+## Loading Data 
+
+```{r}
+library(readr)
+london_weather <- read_csv("Question2/Data/London/london_weather.csv")
+
+```
+
+# Question 3
+
+## Creating Template
+
+```{r}
+
+Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/20945043/Question3",
+                          template_name = "Question3_html",
+                          build_project = T, open_project = F)
+
+```
+
+## Loading Data
+
+
+
+# Question 4
+
+## Creating Template
+
+```{r}
+
+Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/20945043/Question4",
+                          template_name = "Question4_html",
+                          build_project = T, open_project = F)
+
+```
+

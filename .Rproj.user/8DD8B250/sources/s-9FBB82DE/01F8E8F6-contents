@@ -1,0 +1,23 @@
+
+brics_SI_deaths <- function(owid_covid_data, df_brics, df_brics_sub, total_deaths, x, y, title, subtitle, caption){
+
+    library(dplyr)
+    df_brics = owid_covid_data %>% group_by(location, stringency_index) %>%
+        summarise(deaths_per_million = sum(new_deaths_smoothed_per_million)) %>%
+        na.omit(.) %>%
+        ungroup() %>%
+        group_by(location) %>%
+        mutate(deaths_per_million = deaths_per_million/max(deaths_per_million)) %>%
+        ungroup()
+
+    library(tidyverse)
+    df_brics_sub <- df_brics[df_brics$location %in% c("Brazil", "Russia", "India", "China", "South Africa"), ]
+
+
+    ggplot(df_brics_sub, aes(x=stringency_index, y=deaths_per_million, color = location)) +
+        geom_point()+
+        geom_smooth(method=lm, se =FALSE) +
+        theme_bw() + theme(legend.position = "bottom") + labs(x = "SI",
+                                                              y = "Total Cases", title = "BRICS", subtitle = "Total number of deaths and SI per country",
+                                                              caption = "Note:OWID data used")
+}
