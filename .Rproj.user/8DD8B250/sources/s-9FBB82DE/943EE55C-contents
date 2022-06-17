@@ -1,7 +1,9 @@
 
-london_code <- function(london_weather, x,
-                                  y, title, subtitle, colour, format){
-# fix the date
+london_code <- function(london_weather, SUN_Hours){
+
+    L_weather_clean <- london_weather[!is.na(london_weather$mean_temp), ]
+
+    # fix the date
 london_weather$date <- as.Date(as.character(london_weather$date),format = "%Y%m%d")
 
 # sunny days, and max temp
@@ -20,34 +22,33 @@ ggplot(lond_sunny, aes(x=sunshine, y=max_temp)) +
                                                           y = "Max temp", title = "Max temp according to sunshine", subtitle = "Even when sunny, still coooold")
 
 # mean temp: London vs SA
+
 library(dplyr)
-mean_temp_lond = london_weather %>%
-    group_by(date) %>%
-    filter(date > as.Date("2019-12-31")) %>%
-    group_by() %>%
-    select(date, mean_temp) %>%
-    na.omit(.)
 
-df <- mean_temp_lond %>%
-    mutate(month = format(date, "%m"), year = format(date, "%Y")) %>%
-    group_by(month, year) %>%
-    summarize(mean_temp = mean(mean_temp)) %>%
-    na.omit(.)
+L_weather <- L_weather_clean %>%
+    mutate(month = as.Date(as.character(L_weather_clean$date),format = "%Y%m%d")) %>%
+    filter(month > as.Date("2019-12-31")) %>%
+    mutate(month = lubridate::month(month)) %>%
+    group_by(month) %>%
+    summarise(mean_temp = mean(mean_temp)) %>%
+    add_column(Location = "London")
 
-df1 = df %>%
-    group_by(month)%>%
-    select(mean_temp)
+S_weather <- SUN_Hours %>%
+    mutate(month = lubridate::month(as.Date(as.POSIXct(TmStamp)))) %>%
+    group_by(month) %>%
+    na.omit(.) %>%
+    summarise(mean_temp = mean(AirTC_Avg))%>%
+    add_column(Location = "Stellenbosch")
 
 
-data_bar <- df1$mean_temp
-names(data_bar) <- df1$month
+weather_results <- rbind(L_weather%>%group_by(mean_temp),S_weather%>%group_by(mean_temp))
 
-barplot(data_bar,
-        main = "Average Temperature for 2020",
-        xlab = "Month",
-        ylab = "Temperature",
-        col = "#1b98e0")
-
+ggplot(weather_results, aes(x=month, y=mean_temp,fill = Location)) + geom_bar(stat="identity", position="dodge") +
+    scale_x_continuous(breaks = seq(0, 12, 1)) +
+    scale_fill_manual(values = c("London" = "blue", "Stellenbosch" = "coral2")) +
+    theme_bw() + theme(legend.position = "bottom") + labs(x = "Month",y = "Mean temperature",
+                                                          title = "Mean temperature",subtitle = "Comparison between Stellenbosch and London",
+                                                          caption = "Note:Sauran external data used for Stellenbosch")
 
 }
 

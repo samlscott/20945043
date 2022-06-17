@@ -1,11 +1,10 @@
-
 ---
 output:
   md_document:
     variant: markdown_github
 ---
 
-# Question 1 
+# Question 1
 
 ## Creating Template
 
@@ -42,7 +41,6 @@ owid_covid_data <- read_csv("Question1/Data/Covid/owid-covid-data.csv")
 
 ```
 
-
 ## Graph 1
 
 ```{r}
@@ -53,9 +51,9 @@ g
 
 ```
 
-As seen in the graph, the continents with the highest number of total cases is Europe and North America. African countries are seen to have not been as greatly by COVID than North American, South American and European countries. In comparison, the number of total countries in Africa seem almost insignificant in comparison to countries in other continents. 
+As seen in the graph, the continents with the highest number of total cases is Europe and North America. African countries are seen to have not been as greatly by COVID than North American, South American and European countries. In comparison, the number of total countries in Africa seem almost insignificant in comparison to countries in other continents.
 
-However, to accurately interpret this graph, it is imperative that one take in to consideration the population of the continents. 
+However, to accurately interpret this graph, it is imperative that one take in to consideration the population of the continents.
 
 ## Graph 2
 
@@ -64,6 +62,7 @@ g <- brics_SI_deaths(owid_covid_data, df_brics, df_brics_sub, total_deaths, x = 
                                                           y = "Total Deaths", title = "BRICS", subtitle = "Total number of deaths and SI per country", caption = "Note:OWID data used")
 
 ```
+
 # Question 2
 
 ## Creating Template
@@ -76,12 +75,17 @@ Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/2094504
 
 ```
 
-## Loading Data 
+## Loading Data
 
 ```{r}
 library(readr)
 london_weather <- read_csv("Question2/Data/London/london_weather.csv")
 
+```
+
+```{r}
+library(readr)
+SUN_Hours <- read_csv("~/Desktop/20945043/Question2/Data/SUN Hours.csv")
 ```
 
 # Question 3
@@ -98,8 +102,6 @@ Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/2094504
 
 ## Loading Data
 
-
-
 # Question 4
 
 ## Creating Template
@@ -112,3 +114,22 @@ Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/2094504
 
 ```
 
+## Loading Data
+
+```{r}
+library(readr)
+credits <- read_csv("~/Desktop/20945043/Question4/Data/netflix/credits.csv")
+```
+
+```{r}
+library(readr)
+titles <- read_csv("~/Desktop/20945043/Question4/Data/netflix/titles.csv")
+```
+
+## Figure 4.1
+
+|            | Movies   | Shows    |
+|------------|----------|----------|
+| IMDb score | 6.266980 | 7.017377 |
+
+: IMDb Score: Movies vs Shows

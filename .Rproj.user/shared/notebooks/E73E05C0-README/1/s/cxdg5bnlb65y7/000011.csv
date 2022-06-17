@@ -1,3 +1,0 @@
-"0","g <- brics_SI_deaths(owid_covid_data, df_brics, df_brics_sub, total_deaths, x = ""SI"","
-"0","                                                          y = ""Total Deaths"", title = ""BRICS"", subtitle = ""Total number of deaths and SI per country"", caption = ""Note:OWID data used"")"
-"0",""

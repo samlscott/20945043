@@ -1,5 +1,5 @@
 
-brics_SI_deaths <- function(owid_covid_data, df_brics, df_brics_sub, total_deaths, x, y, title, subtitle, caption){
+brics_SI_deaths <- function(owid_covid_data){
 
     library(dplyr)
     df_brics = owid_covid_data %>% group_by(location, stringency_index) %>%
