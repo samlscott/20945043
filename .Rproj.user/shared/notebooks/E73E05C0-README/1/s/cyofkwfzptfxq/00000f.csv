@@ -1,0 +1,45 @@
+"0",""
+"0","Texevier::create_template_html(directory = ""/Users/samanthascott/Desktop/20945043/Question1"","
+"0","                          template_name = ""Question1_html"","
+"0","                          build_project = T, open_project = F)"
+"1","--------------- 
+ PROMPT: 
+ 
+ Path: "
+"1"," "
+"1","/Users/samanthascott/Desktop/20945043/Question1/Question1_html"
+"1"," "
+"1"," provided already exists. 
+ Proceed to create template in this folder? Type: Y or N....
+"
+"1","--------------- 
+ PROMPT: 
+---------------
+ Invalid input, please type Y in order to create template folder in path: "
+"1"," "
+"1","/Users/samanthascott/Desktop/20945043/Question1/Question1_html"
+"1"," "
+"1"," OR type N to quit 
+"
+"0","Y"
+"1","Creating research folder in: /Users/samanthascott/Desktop/20945043/Question1/Question1_html"
+"1","
+
+=====================
+
+  TEMPLATE FOLDER BUILD SUCCESSFUL at "
+"1"," "
+"1","/Users/samanthascott/Desktop/20945043/Question1"
+"1"," "
+"1","
+
+=====================
+
+Proceed to edit your template located in "
+"1"," "
+"1","/Users/samanthascott/Desktop/20945043/Question1/Question1_html/Question1_html.Rmd"
+"1"," "
+"1","
+Test if you can knit the Rmd into a pdf by knitting the file (e.g. press Cntrl + Shift + K in Windows, find the knit button in Rstudio) into a pdf. A viewer will then appear showing the new pdf just built.
+      
+Visit https://rmarkdown.rstudio.com/ for tips on writing in R."

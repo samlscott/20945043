@@ -174,3 +174,7 @@ g <- netflix_code(titles)
 | IMDb score | 6.266980 | 7.017377 |
 
 : IMDb Score: Movies vs Shows
+
+According to the data, shows did better than movies. 
+
+According to the accompanying data, the combination ['scifi', 'family', 'fantasy', 'animation', 'action'] genre is most 
