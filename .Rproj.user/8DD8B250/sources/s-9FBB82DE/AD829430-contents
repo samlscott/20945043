@@ -9,7 +9,6 @@ output:
 
 # Question 1
 
-
 ## Code
 
 ```{r}
@@ -52,6 +51,7 @@ However, to accurately interpret this graph, it is imperative that one take in t
 g <- brics_SI_deaths(owid_covid_data)
 
 ```
+A seen in the figure above, BRICS countries are compared. When investigating the stringency index of these countries, it is evident that a stronger stringency index is positively correlated to total cases of each country. 
 
 # Question 2
 
@@ -85,11 +85,18 @@ SUN_Hours <- read_csv("~/Desktop/20945043/Question2/Data/SUN Hours.csv")
 g <- london_code(london_weather)
 ```
 
+As seen in the graph above, there is a positive correlation between the maximum temperature and the amount of sun. However, this positive correlation is not very steep, indicating that a jump in the amount of sun only results in a small jump in the max temperature. 
+
+\newpage
+
 ## Graph 2.2
 
 ```{r}
 g <- lond_c(london_weather, SUN_Hours)
 ```
+As depicted in the bar graph above, when compared, Stellenbosch winters are much warmer than London winters. And London summers are much cooler than Stellenbosch summers.
+
+These two graphs suggest that moving to London is a bad idea. 
 
 # Question 4
 
@@ -132,4 +139,4 @@ g <- netflix_code(titles)
 
 According to the data, shows did better than movies. 
 
-According to the accompanying data, the combination ['scifi', 'family', 'fantasy', 'animation', 'action'] genre is most 
+According to the accompanying data, the combination ['scifi', 'family', 'fantasy', 'animation', 'action'] genre is most enjoyed out of all genre combinations, with an average IMDb score of 9.3.

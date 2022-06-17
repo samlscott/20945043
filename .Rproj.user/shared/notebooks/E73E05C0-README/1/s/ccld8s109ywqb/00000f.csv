@@ -1,0 +1,5 @@
+"0","g <- brics_SI_deaths(owid_covid_data)"
+"1","[38;5;252m`summarise()` has grouped output by 'location'. You can override using the `.groups` argument.[39m
+"
+"2","`geom_smooth()` using formula 'y ~ x'
+"
