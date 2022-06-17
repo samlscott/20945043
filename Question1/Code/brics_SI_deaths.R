@@ -20,4 +20,5 @@ brics_SI_deaths <- function(owid_covid_data){
         theme_bw() + theme(legend.position = "bottom") + labs(x = "SI",
                                                               y = "Total Cases", title = "BRICS", subtitle = "Total number of deaths and SI per country",
                                                               caption = "Note:OWID data used")
+
 }

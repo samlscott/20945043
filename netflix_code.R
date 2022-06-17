@@ -1,5 +1,6 @@
-netflix_code <- function(titles)
-# show vs movie
+netflix_code <- function(titles){
+
+    # show vs movie
 
 library(dplyr)
 show_movie = titles %>%
@@ -17,14 +18,17 @@ show_movie_1 <- show_movie %>%
 library(dplyr)
 genre = titles %>%
     group_by(genres) %>%
-    select(genres, imdb_score, release_year) %>%
+    select(genres, imdb_score, type) %>%
     na.omit(.)
 
 genre1 <- genre %>%
     group_by(genres) %>%
+    select(genres, imdb_score, type) %>%
     summarize(ave_score = mean(imdb_score)) %>%
     na.omit(.)
 
 genre_new <- genre1[order(genre1$ave_score, decreasing = TRUE), ]
 
 genre_new1 <- top_n(genre_new, 10)
+
+}

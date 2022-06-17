@@ -44,10 +44,7 @@ owid_covid_data <- read_csv("Question1/Data/Covid/owid-covid-data.csv")
 ## Graph 1
 
 ```{r}
-g <- line_graph_continents(owid_covid_data, x = "Date",
-                                  y = "Total Cases", title = "Covid per Continent", subtitle = "Total number of cases per contintent from beginning 2020",
-                                  caption = "Note:OWID data used", total_cases)
-g
+g <- line_graph_continents(owid_covid_data)
 
 ```
 
@@ -58,8 +55,7 @@ However, to accurately interpret this graph, it is imperative that one take in t
 ## Graph 2
 
 ```{r}
-g <- brics_SI_deaths(owid_covid_data, df_brics, df_brics_sub, total_deaths, x = "SI",
-                                                          y = "Total Deaths", title = "BRICS", subtitle = "Total number of deaths and SI per country", caption = "Note:OWID data used")
+g <- brics_SI_deaths(owid_covid_data)
 
 ```
 
@@ -75,6 +71,17 @@ Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/2094504
 
 ```
 
+## Code
+
+```{r}
+gc() 
+
+library(pacman)
+p_load(tidyverse, lubridate)
+
+list.files('Question2/Code', full.names = T, recursive = T) %>% as.list() %>% walk(~source(.))
+```
+
 ## Loading Data
 
 ```{r}
@@ -88,6 +95,12 @@ library(readr)
 SUN_Hours <- read_csv("~/Desktop/20945043/Question2/Data/SUN Hours.csv")
 ```
 
+## Graphs 
+
+```{r}
+g <- london_code(london_weather, SUN_Hours)
+```
+
 # Question 3
 
 ## Creating Template
@@ -98,6 +111,17 @@ Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/2094504
                           template_name = "Question3_html",
                           build_project = T, open_project = F)
 
+```
+
+## Code
+
+```{r}
+gc() 
+
+library(pacman)
+p_load(tidyverse, lubridate)
+
+list.files('Question3/Code', full.names = T, recursive = T) %>% as.list() %>% walk(~source(.))
 ```
 
 ## Loading Data
@@ -114,6 +138,17 @@ Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/2094504
 
 ```
 
+## Code
+
+```{r}
+gc() 
+
+library(pacman)
+p_load(tidyverse, lubridate)
+
+list.files('Question4/Code', full.names = T, recursive = T) %>% as.list() %>% walk(~source(.))
+```
+
 ## Loading Data
 
 ```{r}
@@ -124,6 +159,12 @@ credits <- read_csv("~/Desktop/20945043/Question4/Data/netflix/credits.csv")
 ```{r}
 library(readr)
 titles <- read_csv("~/Desktop/20945043/Question4/Data/netflix/titles.csv")
+```
+
+## Graphs and Statistics
+
+```{r}
+g <- netflix_code(titles)
 ```
 
 ## Figure 4.1
