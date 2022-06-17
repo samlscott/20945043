@@ -1,0 +1,32 @@
+
+## Creating Template
+
+```{r}
+
+Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/20945043/Question1",
+                          template_name = "Question1_html",
+                          build_project = T, open_project = F)
+
+```
+
+
+## Creating Template
+
+```{r}
+
+Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/20945043/Question2",
+                          template_name = "Question2_html",
+                          build_project = T, open_project = F)
+
+```
+
+
+## Creating Template
+
+```{r}
+
+Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/20945043/Question4",
+                          template_name = "Question4_html",
+                          build_project = T, open_project = F)
+
+```

@@ -1,8 +1,6 @@
 
 london_code <- function(london_weather){
 
-    L_weather_clean <- london_weather[!is.na(london_weather$mean_temp), ]
-
 library(dplyr)
 lond_sunny = london_weather %>%
     mutate(month = as.Date(as.character(london_weather$date),format = "%Y%m%d")) %>%
@@ -11,12 +9,13 @@ lond_sunny = london_weather %>%
     na.omit(.)
 
 library(ggplot2)
-ggplot(lond_sunny, aes(x=sunshine, y=max_temp)) +
+plot <- ggplot(lond_sunny, aes(x=sunshine, y=max_temp)) +
     geom_point( alpha = 0.3,
                size = 0.5, colour = "light blue")+
     geom_smooth(method=lm)+
     theme_bw() + theme(legend.position = "bottom") + labs(x = "Amount of sun",
                                                           y = "Max temp", title = "Max temp according to sunshine", subtitle = "Even when sunny, still coooold")
+print(plot)
 
 }
 

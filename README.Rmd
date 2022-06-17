@@ -9,15 +9,6 @@ output:
 
 # Question 1
 
-## Creating Template
-
-```{r}
-
-Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/20945043/Question1",
-                          template_name = "Question1_html",
-                          build_project = T, open_project = F)
-
-```
 
 ## Code
 
@@ -44,7 +35,7 @@ owid_covid_data <- read_csv("Question1/Data/Covid/owid-covid-data.csv")
 
 ```
 
-## Graph 1
+## Graph 1.1
 
 ```{r}
 g <- line_graph_continents(owid_covid_data)
@@ -55,7 +46,7 @@ As seen in the graph, the continents with the highest number of total cases is E
 
 However, to accurately interpret this graph, it is imperative that one take in to consideration the population of the continents.
 
-## Graph 2
+## Graph 1.2
 
 ```{r}
 g <- brics_SI_deaths(owid_covid_data)
@@ -63,16 +54,6 @@ g <- brics_SI_deaths(owid_covid_data)
 ```
 
 # Question 2
-
-## Creating Template
-
-```{r}
-
-Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/20945043/Question2",
-                          template_name = "Question2_html",
-                          build_project = T, open_project = F)
-
-```
 
 ## Code
 
@@ -98,43 +79,19 @@ library(readr)
 SUN_Hours <- read_csv("~/Desktop/20945043/Question2/Data/SUN Hours.csv")
 ```
 
-## Graphs 
+## Graph 2.1
 
 ```{r}
 g <- london_code(london_weather)
 ```
 
+## Graph 2.2
+
 ```{r}
 g <- lond_c(london_weather, SUN_Hours)
 ```
 
-# Question 3
-
-## Creating Template
-
-```{r}
-
-Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/20945043/Question3",
-                          template_name = "Question3_html",
-                          build_project = T, open_project = F)
-
-```
-
-## Code
-
-## Loading Data
-
 # Question 4
-
-## Creating Template
-
-```{r}
-
-Texevier::create_template_html(directory = "/Users/samanthascott/Desktop/20945043/Question4",
-                          template_name = "Question4_html",
-                          build_project = T, open_project = F)
-
-```
 
 ## Code
 

@@ -1,11 +1,11 @@
 "0","library(readr)"
-"0","titles <- read_csv(""~/Desktop/20945043/Question4/Data/netflix/titles.csv"")"
-"1","[1mRows: [22m[34m5806[39m [1mColumns: [22m[34m15[39m
+"0","SUN_Hours <- read_csv(""~/Desktop/20945043/Question2/Data/SUN Hours.csv"")"
+"1","[1mRows: [22m[34m20368[39m [1mColumns: [22m[34m17[39m
 "
 "1","[36m──[39m [1mColumn specification[22m [36m───────────────────────────────────────────────────────────────────────────────────[39m
 [1mDelimiter:[22m "",""
-[31mchr[39m (8): id, title, type, description, age_certification, genres, production_countries, imdb_id
-[32mdbl[39m (7): release_year, runtime, seasons, imdb_score, imdb_votes, tmdb_popularity, tmdb_score
+[31mchr[39m  (1): TmStamp
+[32mdbl[39m (16): RecNum, BattV_Min, TrackerWM_Avg, Tracker2WM_Avg, ShadowWM_Avg, SunWM_Avg, ShadowbandWM_Avg, ...
 "
 "1","
 [36mℹ[39m Use `spec()` to retrieve the full column specification for this data.

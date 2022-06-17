@@ -1,8 +1,6 @@
 lond_c <- function(london_weather, SUN_Hours){
 library(dplyr)
 
-L_weather_clean <- london_weather[!is.na(london_weather$mean_temp), ]
-
 L_weather <- L_weather_clean %>%
     mutate(month = as.Date(as.character(L_weather_clean$date),format = "%Y%m%d")) %>%
     filter(month > as.Date("2019-12-31")) %>%
