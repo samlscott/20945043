@@ -137,6 +137,12 @@ g <- netflix_code(titles)
 
 : IMDb Score: Movies vs Shows
 
+
 According to the data, shows did better than movies. 
 
 According to the accompanying data, the combination ['scifi', 'family', 'fantasy', 'animation', 'action'] genre is most enjoyed out of all genre combinations, with an average IMDb score of 9.3.
+
+```{r}
+g <- netflixcode(titles)
+```
+As seen in the figure, there is a positive correlation. Ratings are trustworthy.

@@ -1,0 +1,5 @@
+"0","g <- netflixcode(titles)"
+"1","[38;5;252m`summarise()` has grouped output by 'type'. You can override using the `.groups` argument.[39m
+"
+"2","`geom_smooth()` using formula 'y ~ x'
+"
