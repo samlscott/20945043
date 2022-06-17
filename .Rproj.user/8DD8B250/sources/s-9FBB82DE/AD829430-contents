@@ -1,11 +1,13 @@
 ---
-title: "README"
+title: "Masters Data Science Exam: README"
 author: "Samantha Scott"
 date: "17/06/2022"
 output:
   pdf_document: default
   html_document: default
 ---
+
+\newpage
 
 # Question 1
 
@@ -87,8 +89,6 @@ g <- london_code(london_weather)
 
 As seen in the graph above, there is a positive correlation between the maximum temperature and the amount of sun. However, this positive correlation is not very steep, indicating that a jump in the amount of sun only results in a small jump in the max temperature. 
 
-\newpage
-
 ## Graph 2.2
 
 ```{r}
@@ -137,6 +137,11 @@ g <- netflix_code(titles)
 
 : IMDb Score: Movies vs Shows
 
+
 According to the data, shows did better than movies. 
 
 According to the accompanying data, the combination ['scifi', 'family', 'fantasy', 'animation', 'action'] genre is most enjoyed out of all genre combinations, with an average IMDb score of 9.3.
+
+```{r}
+g <- netflix(titles)
+```
